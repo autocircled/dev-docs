@@ -158,6 +158,7 @@ final class DEV_DOCS {
 	public function on_plugin_loaded() {
         if ( $this->is_compatible() ) {
             $this->i18n();
+			$this->include_files();
         }
         
     }
@@ -184,6 +185,10 @@ final class DEV_DOCS {
             
     }
 
+	protected function include_files(){
+		require_once 'inc/register-post-type.php';
+	}
+
     /**
 	 * Admin notice
 	 *
@@ -209,3 +214,5 @@ final class DEV_DOCS {
     }
 
 }
+
+DEV_DOCS::instance();
